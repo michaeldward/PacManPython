@@ -1,35 +1,31 @@
 import pygame
 
-width = 640
-height = 480
-
-class PacMan(pygame.sprite.Sprite):
+class MissPacMan(pygame.sprite.Sprite):
     moveDirect = 0 #1 for LEFT, 2 for RIGHT, 3 for UP, 4 for DOWN
     nextDirect = 0 #0 means unassigned
     mouthOpen = False
     xPos = 0
     yPos = 0
     mouthCounter = 0
-    image = pygame.image.load("img/PacManLeftOpen.png")
+    image = pygame.image.load("img/MissPacManLeftOpen.png")
     rect = image.get_rect()
-    def __init__(self, x, y, direction, screenobj):
+    def __init__(self, x, y, direction):
         pygame.sprite.Sprite.__init__(self)
         self.moveDirect = direction
         if self.moveDirect is 1:
-            self.image = pygame.image.load("img/PacManLeftOpen.png")
+            self.image = pygame.image.load("img/MissPacManLeftOpen.png")
         elif self.moveDirect is 2:
-            self.image = pygame.image.load("img/PacManRightOpen.png")
+            self.image = pygame.image.load("img/MissPacManRightOpen.png")
         elif self.moveDirect is 3:
-            self.image = pygame.image.load("img/PacManUpOpen.png")
+            self.image = pygame.image.load("img/MissPacManUpOpen.png")
         elif self.moveDirect is 4:
-            self.image = pygame.image.load("img/PacmanDownOpen.png")
-        #screen = pygame.display.get_surface()
+            self.image = pygame.image.load("img/MissPacmanDownOpen.png")
+        screen = pygame.display.get_surface()
         #self.area = self.image.get_rect()
         xPos = x
         yPos = y
         self.rect.top = y
         self.rect.left = x
-        self.screen = screenobj
         #screen.blit(self, self.rect)
     def changeDirection(self, direction, Barriers):
         if(self.canMove(direction, Barriers)):
@@ -42,23 +38,23 @@ class PacMan(pygame.sprite.Sprite):
             if self.mouthOpen is False:
                 self.mouthOpen = True
                 if self.moveDirect is 1:
-                    self.image = pygame.image.load("img/PacManLeftOpen.png")
+                    self.image = pygame.image.load("img/MissPacManLeftOpen.png")
                 elif self.moveDirect is 2:
-                    self.image = pygame.image.load("img/PacManRightOpen.png")
+                    self.image = pygame.image.load("img/MissPacManRightOpen.png")
                 elif self.moveDirect is 3:
-                    self.image = pygame.image.load("img/PacManUpOpen.png")
+                    self.image = pygame.image.load("img/MissPacManUpOpen.png")
                 elif self.moveDirect is 4:
-                    self.image = pygame.image.load("img/PacManDownOpen.png")
+                    self.image = pygame.image.load("img/MissPacManDownOpen.png")
             else:
                 self.mouthOpen = False
                 if self.moveDirect is 1:
-                    self.image = pygame.image.load("img/PacManLeftClosed.png")
+                    self.image = pygame.image.load("img/MissPacManLeftClosed.png")
                 elif self.moveDirect is 2:
-                    self.image = pygame.image.load("img/PacManRightClosed.png")
+                    self.image = pygame.image.load("img/MissPacManRightClosed.png")
                 elif self.moveDirect is 3:
-                    self.image = pygame.image.load("img/PacManUpClosed.png")
+                    self.image = pygame.image.load("img/MissPacManUpClosed.png")
                 elif self.moveDirect is 4:
-                    self.image = pygame.image.load("img/PacManDownClosed.png")
+                    self.image = pygame.image.load("img/MissPacManDownClosed.png")
         else:
             self.mouthCounter += 1
     def canMove(self, direction, Barriers):
@@ -77,7 +73,7 @@ class PacMan(pygame.sprite.Sprite):
                     return False
         return True
     def update(self, Barriers):
-        for x in range(0, 4):
+        for x in range(0, 5):
             if self.nextDirect is not 0:
                 self.changeDirection(self.nextDirect, Barriers)
                 if self.nextDirect is self.moveDirect:
@@ -104,4 +100,4 @@ class PacMan(pygame.sprite.Sprite):
         #print self.rect.topright
         #print self.rect.bottomright
         self.openClose()
-        self.screen.blit(self.image, self.rect)
+        screen.blit(self.image, self.rect)
