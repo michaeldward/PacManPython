@@ -20,19 +20,19 @@ class PacMan(pygame.sprite.Sprite):
     xPos = 0
     yPos = 0
     mouthCounter = 0
-    image = pygame.image.load("PacManLeftOpen.png")
+    image = pygame.image.load("img/PacManLeftOpen.png")
     rect = image.get_rect()
     def __init__(self, x, y, direction):
         pygame.sprite.Sprite.__init__(self)
         self.moveDirect = direction
         if self.moveDirect is 1:
-            self.image = pygame.image.load("PacManLeftOpen.png")
+            self.image = pygame.image.load("img/PacManLeftOpen.png")
         elif self.moveDirect is 2:
-            self.image = pygame.image.load("PacManRightOpen.png")
+            self.image = pygame.image.load("img/PacManRightOpen.png")
         elif self.moveDirect is 3:
-            self.image = pygame.image.load("PacManUpOpen.png")
+            self.image = pygame.image.load("img/PacManUpOpen.png")
         elif self.moveDirect is 4:
-            self.image = pygame.image.load("PacmanDownOpen.png")
+            self.image = pygame.image.load("img/PacmanDownOpen.png")
         screen = pygame.display.get_surface()
         #self.area = self.image.get_rect()
         xPos = x
@@ -51,23 +51,23 @@ class PacMan(pygame.sprite.Sprite):
             if self.mouthOpen is False:
                 self.mouthOpen = True
                 if self.moveDirect is 1:
-                    self.image = pygame.image.load("PacManLeftOpen.png")
+                    self.image = pygame.image.load("img/PacManLeftOpen.png")
                 elif self.moveDirect is 2:
-                    self.image = pygame.image.load("PacManRightOpen.png")
+                    self.image = pygame.image.load("img/PacManRightOpen.png")
                 elif self.moveDirect is 3:
-                    self.image = pygame.image.load("PacManUpOpen.png")
+                    self.image = pygame.image.load("img/PacManUpOpen.png")
                 elif self.moveDirect is 4:
-                    self.image = pygame.image.load("PacManDownOpen.png")
+                    self.image = pygame.image.load("img/PacManDownOpen.png")
             else:
                 self.mouthOpen = False
                 if self.moveDirect is 1:
-                    self.image = pygame.image.load("PacManLeftClosed.png")
+                    self.image = pygame.image.load("img/PacManLeftClosed.png")
                 elif self.moveDirect is 2:
-                    self.image = pygame.image.load("PacManRightClosed.png")
+                    self.image = pygame.image.load("img/PacManRightClosed.png")
                 elif self.moveDirect is 3:
-                    self.image = pygame.image.load("PacManUpClosed.png")
+                    self.image = pygame.image.load("img/PacManUpClosed.png")
                 elif self.moveDirect is 4:
-                    self.image = pygame.image.load("PacManDownClosed.png")
+                    self.image = pygame.image.load("img/PacManDownClosed.png")
         else:
             self.mouthCounter += 1
     def canMove(self, direction, Barriers):
@@ -121,19 +121,19 @@ class MissPacMan(pygame.sprite.Sprite):
     xPos = 0
     yPos = 0
     mouthCounter = 0
-    image = pygame.image.load("MissPacManLeftOpen.png")
+    image = pygame.image.load("img/MissPacManLeftOpen.png")
     rect = image.get_rect()
     def __init__(self, x, y, direction):
         pygame.sprite.Sprite.__init__(self)
         self.moveDirect = direction
         if self.moveDirect is 1:
-            self.image = pygame.image.load("MissPacManLeftOpen.png")
+            self.image = pygame.image.load("img/MissPacManLeftOpen.png")
         elif self.moveDirect is 2:
-            self.image = pygame.image.load("MissPacManRightOpen.png")
+            self.image = pygame.image.load("img/MissPacManRightOpen.png")
         elif self.moveDirect is 3:
-            self.image = pygame.image.load("MissPacManUpOpen.png")
+            self.image = pygame.image.load("img/MissPacManUpOpen.png")
         elif self.moveDirect is 4:
-            self.image = pygame.image.load("MissPacmanDownOpen.png")
+            self.image = pygame.image.load("img/MissPacmanDownOpen.png")
         screen = pygame.display.get_surface()
         #self.area = self.image.get_rect()
         xPos = x
@@ -152,23 +152,23 @@ class MissPacMan(pygame.sprite.Sprite):
             if self.mouthOpen is False:
                 self.mouthOpen = True
                 if self.moveDirect is 1:
-                    self.image = pygame.image.load("MissPacManLeftOpen.png")
+                    self.image = pygame.image.load("img/MissPacManLeftOpen.png")
                 elif self.moveDirect is 2:
-                    self.image = pygame.image.load("MissPacManRightOpen.png")
+                    self.image = pygame.image.load("img/MissPacManRightOpen.png")
                 elif self.moveDirect is 3:
-                    self.image = pygame.image.load("MissPacManUpOpen.png")
+                    self.image = pygame.image.load("img/MissPacManUpOpen.png")
                 elif self.moveDirect is 4:
-                    self.image = pygame.image.load("MissPacManDownOpen.png")
+                    self.image = pygame.image.load("img/MissPacManDownOpen.png")
             else:
                 self.mouthOpen = False
                 if self.moveDirect is 1:
-                    self.image = pygame.image.load("MissPacManLeftClosed.png")
+                    self.image = pygame.image.load("img/MissPacManLeftClosed.png")
                 elif self.moveDirect is 2:
-                    self.image = pygame.image.load("MissPacManRightClosed.png")
+                    self.image = pygame.image.load("img/MissPacManRightClosed.png")
                 elif self.moveDirect is 3:
-                    self.image = pygame.image.load("MissPacManUpClosed.png")
+                    self.image = pygame.image.load("img/MissPacManUpClosed.png")
                 elif self.moveDirect is 4:
-                    self.image = pygame.image.load("MissPacManDownClosed.png")
+                    self.image = pygame.image.load("img/MissPacManDownClosed.png")
         else:
             self.mouthCounter += 1
     def canMove(self, direction, Barriers):
@@ -226,7 +226,7 @@ class Blinky(pygame.sprite.Sprite):
     stage = 0
     whiteBlue = 0
     white = True
-    image = pygame.image.load("blinky.png")
+    image = pygame.image.load("img/blinky.png")
     rect = image.get_rect()
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -244,21 +244,21 @@ class Blinky(pygame.sprite.Sprite):
         #self.speed += 1
         self.stage = 0
         self.movement = [0, -1]
-        self.image = pygame.image.load("blinky.png")
+        self.image = pygame.image.load("img/blinky.png")
     def move(self):
         if self.freeze:
             if self.freezeTimer is 0:
                 self.freeze = False
-                self.image = pygame.image.load("blinky.png")
+                self.image = pygame.image.load("img/blinky.png")
             else:
                 self.freezeTimer -= 1
                 if self.whiteBlue is 0:
                     self.whiteBlue = 10
                     if self.white is True:
-                        self.image = pygame.image.load("blueGhost.png")
+                        self.image = pygame.image.load("img/blueGhost.png")
                         self.white = False
                     else:
-                        self.image = pygame.image.load("whiteGhost.png")
+                        self.image = pygame.image.load("img/whiteGhost.png")
                         self.white = True
                 else:
                     self.whiteBlue -= 1
@@ -405,7 +405,7 @@ class Pinky(pygame.sprite.Sprite):
     stage = 0
     whiteBlue = 0
     white = True
-    image = pygame.image.load("pinky.png")
+    image = pygame.image.load("img/pinky.png")
     rect = image.get_rect()
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -418,24 +418,24 @@ class Pinky(pygame.sprite.Sprite):
         self.moving = False
         self.freeze = False
         self.freezeTimer = 0
-        self.image = pygame.image.load("pinky.png")
+        self.image = pygame.image.load("img/pinky.png")
         self.timer = 400
         self.stage = 0
         self.movement = [0, -1]
     def move(self):
         if self.freeze:
             if self.freezeTimer is 0:
-                self.image = pygame.image.load("pinky.png")
+                self.image = pygame.image.load("img/pinky.png")
                 self.freeze = False
             else:
                 self.freezeTimer -= 1
                 if self.whiteBlue is 0:
                     self.whiteBlue = 10
                     if self.white is True:
-                        self.image = pygame.image.load("blueGhost.png")
+                        self.image = pygame.image.load("img/blueGhost.png")
                         self.white = False
                     else:
-                        self.image = pygame.image.load("whiteGhost.png")
+                        self.image = pygame.image.load("img/whiteGhost.png")
                         self.white = True
                 else:
                     self.whiteBlue -= 1
@@ -556,7 +556,7 @@ class Inky(pygame.sprite.Sprite):
     stage = 0
     whiteBlue = 0
     white = True
-    image = pygame.image.load("inky.png")
+    image = pygame.image.load("img/inky.png")
     rect = image.get_rect()
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -569,7 +569,7 @@ class Inky(pygame.sprite.Sprite):
         self.moving = False
         self.freeze = False
         self.freezeTimer = 0
-        self.image = pygame.image.load("inky.png")
+        self.image = pygame.image.load("img/inky.png")
         self.timer = 800
         self.stage = 0
         self.movement = [0, -1]
@@ -577,16 +577,16 @@ class Inky(pygame.sprite.Sprite):
         if self.freeze:
             if self.freezeTimer is 0:
                 self.freeze = False
-                self.image = pygame.image.load("inky.png")
+                self.image = pygame.image.load("img/inky.png")
             else:
                 self.freezeTimer -= 1
                 if self.whiteBlue is 0:
                     self.whiteBlue = 10
                     if self.white is True:
-                        self.image = pygame.image.load("blueGhost.png")
+                        self.image = pygame.image.load("img/blueGhost.png")
                         self.white = False
                     else:
-                        self.image = pygame.image.load("whiteGhost.png")
+                        self.image = pygame.image.load("img/whiteGhost.png")
                         self.white = True
                 else:
                     self.whiteBlue -= 1 
@@ -686,7 +686,7 @@ class Clyde(pygame.sprite.Sprite):
     stage = 0
     whiteBlue = 0
     white = True
-    image = pygame.image.load("clyde.png")
+    image = pygame.image.load("img/clyde.png")
     rect = image.get_rect()
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -700,7 +700,7 @@ class Clyde(pygame.sprite.Sprite):
         self.moving = False
         self.freeze = False
         self.freezeTimer = 0
-        self.image = pygame.image.load("clyde.png")
+        self.image = pygame.image.load("img/clyde.png")
         self.timer = 1200
         self.stage = 0
         self.movement = [0, -1]
@@ -708,16 +708,16 @@ class Clyde(pygame.sprite.Sprite):
         if self.freeze:
             if self.freezeTimer is 0:
                 self.freeze = False
-                self.image = pygame.image.load("clyde.png")
+                self.image = pygame.image.load("img/clyde.png")
             else:
                 self.freezeTimer -= 1
                 if self.whiteBlue is 0:
                     self.whiteBlue = 10
                     if self.white is True:
-                        self.image = pygame.image.load("blueGhost.png")
+                        self.image = pygame.image.load("img/blueGhost.png")
                         self.white = False
                     else:
-                        self.image = pygame.image.load("whiteGhost.png")
+                        self.image = pygame.image.load("img/whiteGhost.png")
                         self.white = True
                 else:
                     self.whiteBlue -= 1
@@ -786,9 +786,9 @@ class Food(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         if randint(1, 50) is 49:
             self.big = True
-            self.image = pygame.image.load("bigFood.jpg")
+            self.image = pygame.image.load("img/bigFood.jpg")
         else:
-            self.image = pygame.image.load("food.jpg")
+            self.image = pygame.image.load("img/food.jpg")
         self.rect = self.image.get_rect()
         self.eaten = False
         self.rect.top = y
@@ -880,7 +880,7 @@ for num1 in range(0, 17):
 
 
 screen = pygame.display.set_mode([width, height+32])
-lightsaber = pygame.image.load("PacManRightOpen.png")
+lightsaber = pygame.image.load("img/PacManRightOpen.png")
 pygame.display.set_icon(lightsaber)
 pygame.display.set_caption('Pac Man')
 #pygame.mouse.set_visible(0)
@@ -896,11 +896,11 @@ while playerSelect:
     selectrect = selectlabel.get_rect()
     selectrect.top = 100
     selectrect.left = 75
-    onePlayerImage = pygame.image.load("onePlayer.png")
+    onePlayerImage = pygame.image.load("img/onePlayer.png")
     onePlayerImageRect = onePlayerImage.get_rect()
     onePlayerImageRect.top = 180
     onePlayerImageRect.left = 85
-    twoPlayerImage = pygame.image.load("twoPlayer.jpg")
+    twoPlayerImage = pygame.image.load("img/twoPlayer.jpg")
     twoPlayerImageRect = twoPlayerImage.get_rect()
     twoPlayerImageRect.top = 180
     twoPlayerImageRect.left = 360
@@ -941,11 +941,11 @@ blinky = Blinky()
 pinky = Pinky()
 inky = Inky()
 clyde = Clyde()
-tie = pygame.image.load("MissPacManDownClosed.png")
+tie = pygame.image.load("img/MissPacManDownClosed.png")
 tierect = tie.get_rect()
-tie2 = pygame.image.load("PacManDownOpen.png")
+tie2 = pygame.image.load("img/PacManDownOpen.png")
 tie2rect = tie2.get_rect()
-tieadvanced = pygame.image.load("PacManUpOpen.png")
+tieadvanced = pygame.image.load("img/PacManUpOpen.png")
 tieadvancedrect = tieadvanced.get_rect()
 
 tierect.bottom = 120
@@ -969,9 +969,9 @@ levelFinish = False
 done = False
 lives = 3
 
-livesThree = pygame.image.load("PacManRightClosed.png")
-livesTwo = pygame.image.load("PacManRightClosed.png")
-livesOne = pygame.image.load("PacManRightClosed.png")
+livesThree = pygame.image.load("img/PacManRightClosed.png")
+livesTwo = pygame.image.load("img/PacManRightClosed.png")
+livesOne = pygame.image.load("img/PacManRightClosed.png")
 livesThreeRect = livesThree.get_rect()
 livesTwoRect = livesTwo.get_rect()
 livesOneRect = livesOne.get_rect()
